@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.footer {
+  padding: 3rem 2rem;
+  @include mix.media-tablet {
+    padding: 5rem 2.5rem;
+  }
+
+  @include mix.media-tablet {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .footer__para {
+        margin: 0;
+        max-width: 400px;
+      }
+    }
+  }
+  &__heading {
+    font-size: var.set-font-size(font-size-text-m);
+    font-weight: 900;
+  }
+  &__para {
+    margin: 2.13rem 0;
+  }
+
+  &__socials {
+    display: flex;
+    max-width: 100px;
+    justify-content: space-between;
+    cursor: pointer;
+
+    & li svg path {
+      transition: fill 0.4s;
+    }
+
+    & li:hover svg path {
+      fill: var.iconHover(#151515);
+    }
+
+    @include mix.media-tablet {
+      flex: 1;
+    }
+  }
+}

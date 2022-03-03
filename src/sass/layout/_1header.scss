@@ -1,0 +1,92 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.container {
+  max-width: 445px;
+  margin: 0 auto;
+  @include mix.media-tablet {
+    max-width: 800px;
+  }
+  @include mix.media-big-tablet {
+    max-width: 900px;
+  }
+}
+
+.hero {
+  @include mix.media-tablet {
+    height: 90vh;
+    position: relative;
+
+    img {
+      max-width: 540px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60vw;
+      z-index: -1;
+    }
+  }
+
+  @include mix.media-big-tablet {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 100%;
+      height: 90vh;
+      width: 100%;
+      background-color: var.set-color(clr-dark);
+      z-index: -1;
+    }
+
+    @include mix.media-desktop {
+      left: 18%;
+    }
+  }
+
+  &__title,
+  &__content {
+    padding: 0 1rem;
+
+    @include mix.media-tablet {
+      max-width: 340px;
+      padding: 0;
+      position: absolute;
+    }
+  }
+
+  &__content {
+    @include mix.media-tablet {
+      top: 50%;
+      right: 4%;
+    }
+    @include mix.media-desktop {
+      max-width: 305px;
+      top: 22%;
+      right: 13%;
+    }
+  }
+
+  &__title {
+    @include mix.media-tablet {
+      top: 20%;
+      right: 4%;
+    }
+
+    @include mix.media-desktop {
+      top: 20%;
+      left: -21%;
+      color: var.set-color(clr-white);
+      mix-blend-mode: difference;
+
+      & span {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__content--para {
+    margin-bottom: var.set-margin(margin-s);
+    font-size: var.set-font-size(font-size-texts-s);
+  }
+}

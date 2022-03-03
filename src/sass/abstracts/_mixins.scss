@@ -1,0 +1,19 @@
+@use 'variables' as var;
+
+@mixin media-tablet {
+  @media screen and (min-width: var.break-point(break-point-tablet)) {
+    @content;
+  }
+}
+
+@mixin media-big-tablet {
+  @media screen and (min-width: var.break-point(break-point-big-tablet)) {
+    @content;
+  }
+}
+
+@mixin media-desktop {
+  @media screen and (min-width: var.break-point(break-point-desktop)) {
+    @content;
+  }
+}

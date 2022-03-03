@@ -1,0 +1,105 @@
+@use 'variables' as *;
+@use 'mixins' as mix;
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Outfit:wght@200;300;400&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/************** Global **************/
+
+body {
+  font-family: 'Outfit', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Big Shoulders Display', cursive;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+h1 {
+  font-size: set-font-size(font-size-heading-m);
+  color: set-color(clr-dark);
+  font-weight: 900;
+  margin: set-margin(margin-s) 0;
+
+  @include mix.media-tablet {
+    font-size: set-font-size(font-size-heading-l);
+  }
+}
+
+h2 {
+  font-size: set-font-size(font-size-heading-s);
+  font-weight: 800;
+
+  @include mix.media-desktop {
+    font-size: set-font-size(font-size-heading-m);
+  }
+}
+
+h4 {
+  font-size: set-font-size(font-size-heading-xs);
+  color: set-color(clr-primary);
+}
+
+p {
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: set-font-size(font-size-button);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+ul {
+  list-style: none;
+}
+
+::selection {
+  background-color: set-color(clr-dark);
+  color: set-color(clr-white);
+}
+
+// UTILITY CLASSES
+.container {
+  width: 100%;
+}
+
+.bg-light {
+  padding-right: calc(2.5rem + 3vw);
+  margin-bottom: set-margin(margin-s);
+}
+
+.bg-dark {
+  color: set-color(clr-white);
+  background-color: set-color(clr-dark);
+  padding: 1.5rem;
+}
+
+.bg-primary {
+  color: set-color(clr-dark);
+  background-color: set-color(clr-primary);
+}

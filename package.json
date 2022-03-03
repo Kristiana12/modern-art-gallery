@@ -1,0 +1,18 @@
+{
+  "name": "art-gallery-website",
+  "version": "1.0.0",
+  "description": "![Design preview for the Art gallery website coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.3.2",
+    "parcel": "^2.3.2",
+    "sass": "^1.49.9"
+  }
+}

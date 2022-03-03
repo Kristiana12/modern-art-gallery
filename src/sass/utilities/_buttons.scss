@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.btn-primary {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  border: 0;
+  font-family: 'Big Shoulders Display', cursive;
+  color: var.set-color(clr-white);
+  background-color: var.set-color(clr-dark);
+  font-size: var.set-font-size(font-size-button);
+  letter-spacing: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+
+  & span {
+    display: inline-block;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+
+    background-color: var.set-color(clr-primary);
+    transition: 0.5s ease-in-out;
+  }
+
+  &.btn-index {
+    padding: 1.5rem 5.5rem 1.5rem 2.5rem;
+    span {
+      right: 0;
+    }
+  }
+
+  &.btn-location {
+    position: fixed;
+    padding: 1.5rem 2.5rem 1.5rem 5.5rem;
+    span {
+      left: 0;
+    }
+    @include mix.media-tablet {
+      left: calc(20px + 5vw);
+    }
+  }
+
+  &:hover {
+    color: var.set-color(clr-white);
+    background-color: var.set-color(clr-primary);
+
+    span {
+      background-color: var.set-color(clr-dark);
+    }
+  }
+}
